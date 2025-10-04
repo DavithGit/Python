@@ -63,21 +63,22 @@ nato_alphabet = {
     "Z": "Zulu",
     " ": " "
 }
-#get user word 
+#get user word, explain
 def main():
     print("You're going to be entering a word, and this code will translate it to NATO Phonetic English")
-    user_word = input("Please enter your word to be translated to NATO Phonetic Alphabet. ")
-    #convert word to caps
-    caps_user_word = user_word.upper
+    user_word = input("\nPlease enter your word to be translated to NATO Phonetic Alphabet. ")
+    spell_word(user_word)
 
-    #iterate through each letter, find and print the NATO alph version
-    print("Your translated word is: ")
-    for key in caps_user_word:
-        translation = nato_alphabet.get(key, " ")
+#iterate through each letter, find and print the NATO alph version
+def spell_word(word):
+    caps_user_word = word.upper()
+    print("\nYour translated word is: ")
+    for letter in caps_user_word:
+        translation = nato_alphabet.get(letter, " ")
         print(translation)
+
 #call main
 main()
-
 
 
 
