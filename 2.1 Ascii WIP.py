@@ -11,6 +11,7 @@ Example:
 ascii_value = ord(user_input)
 Display the Result:
 Print the ASCII value to the user.
+
 Reverse Lookup:
 Prompt the user to enter an ASCII value.
 Ensure that the value is between 32 and 127.
@@ -25,8 +26,18 @@ Upload your script to GitHub.
 Submit a link to your repository.
 """
 def main():
-    user_input= input("enter a single character")
-    len(user_input)
+    user_input= input("enter a single character without spaces ")
+    if len(user_input) != 1:
+        print ("invalid length")
     ascii_value = ord(user_input)
-    print (ascii_value)
+    print(f"Your ASCII value is {ascii_value}")
+    try:
+        ascii_input = int(input("enter a value between 32 and 127: "))
+        if ascii_input>31 and ascii_input<128:
+            character = chr(ascii_input)
+            print(f"The character for ASCII value {ascii_input} is '{character}'.")
+        else:
+            print("invalid ASCII value")
+    except TypeError:
+        print("invalid input")
 main()
